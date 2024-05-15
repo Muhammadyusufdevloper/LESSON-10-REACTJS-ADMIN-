@@ -41,6 +41,7 @@
   }
   table{
       width: 100%;
+      border-collapse: collapse;
       thead{
             tr{
                 margin-bottom: 20px;
@@ -51,8 +52,48 @@
             font-size: 16px;
             font-weight: 500;
             line-height: 19.2px;
-            color:#878787;        
+            color:#878787;  
+            padding: 17px 19px;
           }
       }
+
+      tbody{
+        tr{
+            &:nth-child(odd){
+                background-color: #EEF2F5;
+            }
+            td{
+                &:first-child{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 25px;
+                }
+                padding: 17px 19px;
+                h3{
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 16.8px;
+                    color: #414141;
+                }
+                p{
+                    font-family: Lato;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 16.8px;
+                    color: #414141;
+                }
+            }
+        }
+      }
+  }
+  &__img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__text{
+    color: #00CA39;
   }
 }

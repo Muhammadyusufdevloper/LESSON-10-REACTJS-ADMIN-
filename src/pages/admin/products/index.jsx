@@ -1,11 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Products.scss"
 import vector from "../../../assets/Vector.svg"
+import axios from '../../../api'
 
 const Products = () => {
+    const [data,setData] = useState(null)
     useEffect(()=>{
-        
-    },[])
+        axios
+          .get("/products")
+          .then(res => setData(res.data.products))
+          .catch(err => console.log(err))
+    }, [])
+    console.log(data);
+    const product = data?.map((product)=>(
+        <tr>
+            <td>
+                <img className='product__img' src={product.images[0]} alt={product.title} />
+                <h3>{product.title + " " + product.brand}</h3>
+            </td>
+            <td>
+                <p>1/15/12</p>
+            </td>
+            <td>
+                <p className='product__text'>{product.price}</p>
+            </td>
+            <td>
+                <p className='product__text'>{product.price + 200}</p>
+            </td>
+            <td>
+                <p>{product.rating}</p>
+            </td>
+        </tr>
+    ))
   return (
     <>
     <div className='product'>
@@ -24,9 +50,12 @@ const Products = () => {
                         <th>End date</th>
                         <th>Profits</th>
                         <th>Losses</th>
-                        <th>Phone</th>
+                        <th>Rating</th>
                     </tr>
                 </thead>
+                <tbody>
+                    {product}
+                </tbody>
             </table>
         </div>
     </div>
