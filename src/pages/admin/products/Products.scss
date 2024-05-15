@@ -1,5 +1,6 @@
 .product {
   padding-top: 50px;
+  margin-bottom: 80px;
   &__title {
     font-family: Lato;
     font-size: 39px;
@@ -95,5 +96,18 @@
   }
   &__text{
     color: #00CA39;
+  }
+  &__btn{
+    display: block;
+    margin: 40px auto 0;
+    background-color: #00CA39;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    transition: all 0.5s ease;
+    &:hover{
+        background-color: #0e8730b6;
+    }
   }
 }

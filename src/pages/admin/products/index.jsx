@@ -5,12 +5,13 @@ import axios from '../../../api'
 
 const Products = () => {
     const [data,setData] = useState(null)
+    const [limit ,setLimit] = useState(1)
     useEffect(()=>{
         axios
-          .get("/products")
+          .get(`/products?limit=${5 * limit}`)
           .then(res => setData(res.data.products))
           .catch(err => console.log(err))
-    }, [])
+    }, [limit])
     console.log(data);
     const product = data?.map((product)=>(
         <tr>
@@ -57,6 +58,7 @@ const Products = () => {
                     {product}
                 </tbody>
             </table>
+            <button className='product__btn' onClick={()=> setLimit(prev => prev +1)}>See more</button>
         </div>
     </div>
     </>
