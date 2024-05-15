@@ -2,14 +2,13 @@ import React from 'react'
 import Sitebar from '../../components/sitebar'
 import { Outlet } from 'react-router-dom'
 import "../../components/sitebar/Admin.scss"
-import Header from '../../layout/header'
 
 
-const Admin = () => {
+const Admin = ({menu}) => {
   return (
     <>
-      <div className='admin'>
-        <Sitebar/>
+      <div className={`admin ${menu ? "admin__show" : ""}`}>
+        <Sitebar menu={menu}/>
         <Outlet/>
       </div>
     </>

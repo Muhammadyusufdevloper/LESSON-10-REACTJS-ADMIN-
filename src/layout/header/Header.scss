@@ -1,11 +1,12 @@
 .navbar{
-    position: sticky;
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns:255px 1fr;
-    align-items: center;
-    width: 100%;
+    &__wrapper{
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns:255px 1fr;
+        align-items: center;
+    }
     &__menu{
         border: none;
         background-color: transparent;

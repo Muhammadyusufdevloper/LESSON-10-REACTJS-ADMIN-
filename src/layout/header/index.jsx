@@ -5,10 +5,11 @@ import menuImg from "../../assets/admin/menu.svg";
 import jonesImg from "../../assets/admin/photo.svg";
 import adminImg from "../../assets/admin/Logo.svg";
 
-const Header = ({ setMenu,menu }) => {
+const Header = ({ setMenu,menu}) => {
   return (
     <>
       <div className="navbar">
+        <div className="navbar__wrapper">
         <Link className={`navbar__logo ${menu ? "navbar__logo__show" : ""}`} to={"/"}>
           <img src={adminImg} alt="admin logo" />
           <p>Dashboard</p>
@@ -24,6 +25,7 @@ const Header = ({ setMenu,menu }) => {
             <p>Jones Ferdinand</p>
             <img src={jonesImg} alt="Jone img" />
           </div>
+        </div>
         </div>
       </div>
     </>

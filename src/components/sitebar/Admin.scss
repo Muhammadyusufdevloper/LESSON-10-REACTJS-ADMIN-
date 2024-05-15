@@ -1,6 +1,11 @@
 .admin{
   display: grid;
   grid-template-columns:255px 1fr;
+  transition: all 0.5s ease;
+}
+.admin__show{
+  display: grid;
+  grid-template-columns:80px 1fr;
 }
 .sayidbar {
   position: sticky;
@@ -16,6 +21,7 @@
   flex-direction: column;
   transition: all 0.5s ease;
   gap: 53px;
+  padding-top: 50px;
   p{
     transition: all 0.5s ease;
   }

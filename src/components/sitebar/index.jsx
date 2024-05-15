@@ -9,43 +9,18 @@ import agentsImg from "../../assets/admin/agents.svg";
 import articelsImg from "../../assets/admin/articels.svg";
 import modeImg from "../../assets/admin/mode.svg";
 import logoutImg from "../../assets/admin/logout.svg";
-// import Header from "../../layout/header";
-import { Link } from "react-router-dom";
-import menuImg from "../../assets/admin/menu.svg";
-import jonesImg from "../../assets/admin/photo.svg";
-import adminImg from "../../assets/admin/Logo.svg";
 
 
 
-const Sitebar = () => {
+const Sitebar = ({menu}) => {
   let navigate = useNavigate();
-  const [menu,setMenu]= useState(true)
   function hanelLogout() {
     localStorage.clear();
     navigate("/");
   }
   return (
     <>
-      {/* <Header setMenu={setMenu} menu={menu}/> */}
       <div className="site__wrapper">
-      <div className="navbar">
-        <Link className={`navbar__logo ${menu ? "navbar__logo__show" : ""}`} to={"/"}>
-          <img src={adminImg} alt="admin logo" />
-          <p>Dashboard</p>
-        </Link>
-        <div className="navbar__right">
-          <button
-            onClick={() => setMenu((prev) => !prev)}
-            className="navbar__menu"
-          >
-            <img src={menuImg} alt="Menu img" />
-          </button>
-          <div className="navbar__accout">
-            <p>Jones Ferdinand</p>
-            <img src={jonesImg} alt="Jone img" />
-          </div>
-        </div>
-      </div>
       <div className="navbar-sayidbar__wrapper">
         <div className={`sayidbar ${menu ? "sayidbar__show" : ""}`}>
           <ul className="sayidbar__list">
